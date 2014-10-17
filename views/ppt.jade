@@ -1,0 +1,143 @@
+doctype html
+html
+	head
+		meta(http-equiv='Content-Type' content='text/html;charset=utf-8')
+		meta(name='viewport' content='width=1024')
+		meta(http-equiv='X-UA-Compatible' content='IE=edge')
+		meta(name='keywords' content='科技,NFC')
+		meta(name='description' content='综合会展信息解决方案')
+		meta(name='author' content='synorme')
+		link(rel='shortcut icon' href='/img/favicon.ico')
+		title SmartBadge——综合会展信息解决方案
+		link(rel='stylesheet' type='text/css' href='http://libs.baidu.com/bootstrap/3.2.0/css/bootstrap.min.css')
+		link(rel='stylesheet' type='text/css' href='/css/impress.css')
+		script(src='http://libs.baidu.com/jquery/1.10.2/jquery.js')
+	body.impress-not-supported
+		.extra.left.none
+			span(style='font-size:70px;') What does
+		.extra.right.none ynorme do?
+		#impress
+			.step#title(data-x='4200' data-y='800' data-rotate-z='-10')
+				.main
+					h1 SmartBadge
+					h3 ——综合会展信息解决方案
+				p.tips.text-center(style='position:absolute;width:100%;top:350px;font-size:30px;')
+					|按
+					img(src='/img/keyboard.png')
+					| 键浏览
+			.step(data-x='3000' data-y='1000' data-rotate-z='-10')
+				p —— 作为曾经的参展商
+				p &nbsp;
+				p —— 作为多个重大展会的参与者
+				p &nbsp;
+				p.none 在展会中我们碰到了这些问题
+			.step.slide#demand(data-x='1700' data-y='1450' data-rotate-z='-30')
+				h1 需求
+				img(src='/img/demand.png')
+			.step.slide(data-x='1250' data-y='2780' data-rotate-z='70')
+				h1 目标
+				img(style='margin-top:50px;' src='/img/target.png')
+			#overview.step(data-x='3000' data-y='3200' data-scale='10')
+			.step.slide(data-x='2500' data-y='3450' data-rotate-z='-10')
+				.row
+					.col-md-3
+						h1 服务项目
+					.col-md-9
+						img(src='/img/service.png')
+			.step.slide(data-x='3700' data-y='3150' data-rotate-z='-15')
+				.row
+					.col-md-3
+						h1 观众流程
+					.col-md-9
+						img(src='/img/exhibitor.png',style='margin-left:-20px;')
+			.step.slide(data-x='5050' data-y='3200' data-rotate-z='20')
+				.row
+					.col-md-3
+						h1 展商流程
+					.col-md-9
+						img(src='/img/customer.png',style='margin-left:-45px;')
+			.step(data-x='5800' data-y='3950' data-rotate-x='30')
+				p(style='font-size:70px') 通过我们的服务：
+				p &nbsp;
+				p 增强展商与观众在展会中及展会后的联系
+			.step(data-x='5800' data-y='4200' data-z='100' )
+				p 帮助展会主办方更直观了解参展情况
+			.step(data-x='5800' data-y='4350' data-z='50' data-rotate-x='-30')
+				p 最大程度实现对展会数据的利用
+			.step.slide(data-x='5350' data-y='5300' data-rotate-z='-25')
+				h1 数据图表
+				h3 某展台来访者地域统计图
+				.row
+					.col-md-8
+						canvas#areaChart(width='600' height='500')
+					.col-md-4
+						table#areaTable.table.table-bordered
+							thead
+								tr
+									th 省份
+									th 人数
+							tbody
+								tr(style="color: #0DA068")
+									td 天津市
+									td 9
+								tr(style="color: #194E9C")
+									td 四川省
+									td 10
+								tr(style="color: #ED9C13")
+									td 北京市
+									td 15
+								tr(style="color: #ED5713")
+									td 江苏省
+									td 19
+								tr(style="color: #057249")
+									td 吉林省
+									td 18
+								tr(style="color: #5F91DC")
+									td 浙江省
+									td 19
+								tr(style="color: #F88E5D")
+									td 上海市
+									td 7
+			.step.slide(data-x='4100' data-y='5700' data-rotate-z='-10')
+				h1 数据图表
+				h3 某展台观展人来访时间分布
+				.row
+					.col-md-12
+						canvas#visitorChart(width='800' height='500')
+			.step.slide(data-x='2800' data-y='5900' data-rotate-z='-5')
+				h1 数据图表
+				h3 某观展人感兴趣行业
+				.row
+					.col-md-8
+						canvas#intrestChart(width='500' height='500')
+					.col-md-4
+						table#intrestTable.table.table-bordered
+							thead
+								tr
+									th 行业
+									th 数量
+							tbody
+								tr(style="color: #0DA068")
+									td 服装
+									td 8
+								tr(style="color: #194E9C")
+									td 配件
+									td 15
+								tr(style="color: #ED9C13")
+									td 包
+									td 11
+								tr(style="color: #ED5713")
+									td 鞋
+									td 7
+								tr(style="color: #057249")
+									td 帐篷
+									td 8
+								tr(style="color: #5F91DC")
+									td 互联网
+									td 4
+			.step(data-x='1500' data-y='6000')
+				.main
+					h1 谢谢观看
+		script(src='js/chart.js')
+		script(src='js/pie.js')
+		script(src='js/impress.js')

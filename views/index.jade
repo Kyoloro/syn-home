@@ -1,0 +1,148 @@
+doctype html
+html
+	head
+		meta(http-equiv='Content-Type' content='text/html;charset=utf-8')
+		meta(http-equiv='X-UA-Compatible' content='IE=edge')
+		meta(name='keywords' content='科技,NFC')
+		meta(name='description' content='综合会展信息解决方案')
+		meta(name='author' content='synorme')
+		meta(name='viewport' content='width=device-width,initial-scale=1')
+		link(rel='shortcut icon' href='/img/favicon.ico')
+		title SmartBadge——综合会展信息解决方案
+		link(rel='stylesheet' type='text/css' href='http://libs.baidu.com/bootstrap/2.3.2/css/bootstrap.min.css')
+		link(rel='stylesheet' type='text/css' href='http://libs.baidu.com/bootstrap/2.3.2/css/bootstrap-responsive.min.css')
+		link(rel='stylesheet' type='text/css' href='/css/theme.css')
+		script(src='http://libs.baidu.com/jquery/1.10.2/jquery.js')
+		script(src='http://libs.baidu.com/bootstrap/2.3.2/js/bootstrap.js')
+	body
+		.navbar.navbar-fixed-top.navbar-default(data-start='background: rgba(255, 255, 255, .0); padding: 20px 0px;' data-90p='background: rgba(255, 255, 255, 1); padding: 5px 0px;')
+				.container
+					a.btn.btn-navbar(data-toggle='collapse' data-target='.nav-collapse')
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.brand.smooth(href='#intro')
+						img(src='/img/logo.png')
+					.nav-collapse.collapse
+						ul.nav.pull-right.text-center
+							li
+								a.smooth(href='#advantage' data-start='color: rgb(200, 200, 200);' data-90p='color: rgb(37, 39, 43);') 产品优势
+							li
+								a.smooth(href='#compose' data-start='color: rgb(200, 200, 200);' data-90p='color: rgb(37, 39, 43);') 产品功能
+							li
+								a.smooth(href='#service' data-start='color: rgb(200, 200, 200);' data-90p='color: rgb(37, 39, 43);') 服务
+							li
+								a(href='http://www.lianyun.me' target='_blank')
+									span.lianyun 联云
+		#intro(data-start='background-position: 50% -30px;' data-90p='background-position: 50% 320px;')
+			.container-fluid.text-center
+				.row-fluid
+					.span8.offset2.carousel.slide
+						.carousel-inner
+							.item.active(style='width:100%;')
+								h1 综合会展信息解决方案
+							.item(style='width:100%;')
+								h1 增强观展体验
+							.item(style='width:100%;')
+								h1 易于使用
+							.item(style='width:100%;')
+								h1 快捷高效
+				.row-fluid
+					.span4.offset4
+						a.btn.btn-link(href='/intro' target='_blank') 了解详情
+		#advantage
+			.container
+				h4.divide 产品优势
+				.row.divide
+					.span3
+						.thumbnail
+							img(src='/img/connection.png')
+							.caption
+								h3.text-center 智能胸牌
+								h4.text-center 安全性高、增强互动
+								p 提升展会形象，有效增强展商与观众互动
+					.span3
+						.thumbnail
+							img(src='/img/database.png')
+							.caption
+								h3.text-center 数据采集
+								h4.text-center 快速、零错误率
+								p 高效采集展台来访者信息；数据录入准确高效
+					.span3
+						.thumbnail
+							img(src='/img/analysis.png')
+							.caption
+								h3.text-center 数据分析
+								h4.text-center 电子化存储、处理速度快
+								p 海量数据快速分析，帮助参展商及主办方对参展效果做出合理评估
+					.span3
+						.thumbnail
+							img(src='/img/expand.png')
+							.caption
+								h3.text-center 扩展丰富
+								h4.text-center 按需定制、高度模块化
+								p 针对具体需求深度定制，结合终端实现更多功能
+		#compose
+			.container
+				h4.divide 产品功能
+				.row.divide
+					.span10.offset1
+						.row.divide
+							.span1
+								img(src='/img/compose1.png')
+							.span4
+								h4 电子名片
+								p 存储持卡人身份信息
+							.span1
+								img(src='/img/compose2.png')
+							.span4
+								h4 终端设备
+								p 设备记录持卡人身份信息
+						.row.divide
+							.span1
+								img(src='/img/compose3.png')
+							.span4
+								h4 联云通讯录
+								p 随时获取展会中接洽观众联系信息
+							.span1
+								img(src='/img/compose4.png')
+							.span4
+								h4 数据图
+								p 完整评估展会效果
+						.row.divide
+							.span1
+								img(src='/img/compose5.png')
+							.span4
+								h4 联云APP
+								p 简单易用的销售人员名片管理APP
+		#service
+			.container
+				h4.divide 服务
+				.row.divide
+					.span10.offset1
+						div
+							a.lianyun(href='http://www.lianyun.me' title='联云——云通讯录后台管理' target='_blank')
+							a.geekdial(href='/ftp/geekdial.apk' title='极拨——智能拨号插件')
+		#footer
+			.container
+				.row(style='margin-top:10px;margin-bottom:5px;')
+					.span3
+						a.brand.smooth(href='#intro') Synorme
+						p
+							small 2014 &copy; Synorme Inc.
+							br
+							small 沪ICP备12024460号
+					.span3.offset6
+						ul
+							li
+								h5 联系我们
+							li QQ:11997867
+							li 邮箱:alexni@synorme.com
+		script(src='/js/jquery.easing.js')
+		script(src='/js/jquery.scrollTo.min.js')
+		script(src='/js/smoothscroll.js')
+		script(src='/js/skrollr.js')
+		<!--[if lt IE 9]>
+		script(type="text/javascript" src="js/skrollr.ie.js")
+		<![endif]-->
+		script(src='/js/theme.js')
