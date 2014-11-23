@@ -20,7 +20,7 @@ app.use(favicon(__dirname + '/public/img/favicon.ico',{
     maxAge:'30d'
 }));
 app.use(express.static(__dirname + '/public', {
-    maxAge: '30d'
+    maxAge: '60d'
 }));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
