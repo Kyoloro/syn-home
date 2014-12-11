@@ -2,16 +2,16 @@ doctype html
 html
 	head
 		meta(http-equiv='Content-Type' content='text/html;charset=utf-8')
-		meta(name='viewport' content='width=device-width, initial-scale=1')
 		meta(http-equiv='X-UA-Compatible' content='IE=edge')
 		meta(name='keywords' content='科技,NFC')
 		meta(name='description' content='综合会展信息解决方案')
-		meta(name='author' content='synorme')
+		meta(name='author' content='synorme,上海斯墨信息科技有限公司')
+		meta(name='viewport' content='width=1024')
 		link(rel='shortcut icon' href='/img/favicon.ico')
 		title SmartBadge——综合会展信息解决方案
 		link(rel='stylesheet' type='text/css' href='http://libs.baidu.com/bootstrap/3.2.0/css/bootstrap.min.css')
 		link(rel='stylesheet' type='text/css' href='/css/impress.css')
-		script(src='http://libs.baidu.com/jquery/1.10.2/jquery.js')
+		script(src='http://libs.baidu.com/jquery/1.11.1/jquery.js')
 	body.impress-not-supported
 		.extra.left.none
 			span(style='font-size:70px;') What does
@@ -30,7 +30,7 @@ html
 				p &nbsp;
 				p —— 作为多个重大展会的参与者
 				p &nbsp;
-				p.none 在展会中我们碰到了这些问题
+				p.none.mobile 在展会中我们碰到了这些问题
 			.step.slide#demand(data-x='1700' data-y='1450' data-rotate-z='-30')
 				h1 需求
 				img(src='/img/demand.png')
@@ -40,21 +40,21 @@ html
 			#overview.step(data-x='3000' data-y='3200' data-scale='10')
 			.step.slide(data-x='2500' data-y='3450' data-rotate-z='-10')
 				.row
-					.col-md-3
+					.col-xs-3
 						h1 服务项目
-					.col-md-9
+					.col-xs-9
 						img(src='/img/service.png')
 			.step.slide(data-x='3700' data-y='3150' data-rotate-z='-15')
 				.row
-					.col-md-3
+					.col-xs-3
 						h1 观众流程
-					.col-md-9
+					.col-xs-9
 						img(src='/img/exhibitor.png',style='margin-left:-20px;')
 			.step.slide(data-x='5050' data-y='3200' data-rotate-z='20')
 				.row
-					.col-md-3
+					.col-xs-3
 						h1 展商流程
-					.col-md-9
+					.col-xs-9
 						img(src='/img/customer.png',style='margin-left:-45px;')
 			.step(data-x='5800' data-y='3950' data-rotate-x='30')
 				p(style='font-size:70px') 通过我们的服务：
@@ -68,9 +68,9 @@ html
 				h1 数据图表
 				h3 某展台来访者地域统计图
 				.row
-					.col-md-8
+					.col-xs-8
 						canvas#areaChart(width='600' height='500')
-					.col-md-4
+					.col-xs-4
 						table#areaTable.table.table-bordered
 							thead
 								tr
@@ -102,15 +102,15 @@ html
 				h1 数据图表
 				h3 某展台观展人来访时间分布
 				.row
-					.col-md-12
+					.col-xs-12
 						canvas#visitorChart(width='800' height='500')
 			.step.slide(data-x='2800' data-y='5900' data-rotate-z='-5')
 				h1 数据图表
 				h3 某观展人感兴趣行业
 				.row
-					.col-md-8
+					.col-xs-8
 						canvas#intrestChart(width='500' height='500')
-					.col-md-4
+					.col-xs-4
 						table#intrestTable.table.table-bordered
 							thead
 								tr

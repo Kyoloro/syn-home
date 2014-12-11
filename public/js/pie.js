@@ -1,31 +1,14 @@
-$(function () {
-    var api = impress();
-    api.init();
-    $('body').on('keydown', function (e) {
-        if (e.keyCode == 27) {
-            api.goto('overview')
+$(function() {
+    var api = impress(),
+        steps = $('.step');
+    if (/Mobile/i.test(navigator.userAgent)) {
+        $('.mobile.none').css('opacity', '1');
+        $('.tips').css('display', 'none');
+        pieChart('#areaTable td', '#areaChart');
+        var data = {
+            "label": [1394582400025, 1394584200025, 1394586000025, 1394587800025, 1394589600025, 1394591400025, 1394593200025, 1394595000025, 1394596800025, 1394598600025, 1394600400025, 1394602200025, 1394604000025, 1394605800025, 1394607600025, 1394609400025, 1394611200025, 1394613000025, 1394614800025, 1394616600025, 1394618400025],
+            "data": [19, 24, 35, 27, 37, 21, 22, 18, 31, 21, 18, 27, 23, 23, 22, 34, 24, 27, 26, 16, 5]
         }
-    }).on('mousewheel', function (e) {
-        e.preventDefault();
-    });
-    var steps = $('.step');
-    pieChart('#areaTable td', '#areaChart');
-    $('#overview').on('impress:stepenter', function (e) {
-        $('.extra').removeClass('none');
-    }).on('impress:stepleave', function (e) {
-        $('.extra').addClass('none');
-    });
-    steps.eq(1).on('impress:stepenter', function (e) {
-        $(this).find('.none').stop().delay(1000).animate({
-            opacity: 1
-        }, 2000)
-    }).on('impress:stepleave', function (e) {
-        console.log(123)
-        $(this).find('.none').stop().animate({
-            opacity: 0
-        }, 0);
-    }).end().eq(12).on('impress:stepenter', function (e) {
-        var data = JSON.parse('{"label":[1394582400025,1394584200025,1394586000025,1394587800025,1394589600025,1394591400025,1394593200025,1394595000025,1394596800025,1394598600025,1394600400025,1394602200025,1394604000025,1394605800025,1394607600025,1394609400025,1394611200025,1394613000025,1394614800025,1394616600025,1394618400025],"data":[19,24,35,27,37,21,22,18,31,21,18,27,23,23,22,34,24,27,26,16,5]}')
         var arr = [];
         for (var i = 0; i < data.label.length; i++) {
             var stamp = new Date(data.label[i]);
@@ -49,10 +32,10 @@ $(function () {
             scaleStepWidth: 5,
             scaleStartValue: 0,
             datasetStrokeWidth: 5,
-            pointDotRadius: 7
+            pointDotRadius: 7,
+            animation: false
         }
-        var myLine = new Chart($(this).find('canvas')[0].getContext("2d")).Line(lineChartData, options);
-    }).end().eq(13).on('impress:stepenter', function (e) {
+        var myLine = new Chart(steps.eq(12).find('canvas')[0].getContext("2d")).Line(lineChartData, options);
         var doughnutData = [{
             value: 8,
             label: '服装',
@@ -93,13 +76,108 @@ $(function () {
                 }
             }
         }
-        var myDoughnut = new Chart($(this).find('canvas')[0].getContext("2d"), options).Doughnut(doughnutData, {
-            animationEasing: "easeInOutQuad"
+        var myDoughnut = new Chart(steps.eq(13).find('canvas')[0].getContext("2d"), options).Doughnut(doughnutData, {
+            animation: false
         });
-    });
+    } else {
+        api.init();
+        $('body').on('keydown', function(e) {
+            if (e.keyCode == 27) {
+                api.goto('overview')
+            }
+        }).on('mousewheel', function(e) {
+            e.preventDefault();
+        });
+        pieChart('#areaTable td', '#areaChart');
+        $('#overview').on('impress:stepenter', function(e) {
+            $('.extra').removeClass('none');
+        }).on('impress:stepleave', function(e) {
+            $('.extra').addClass('none');
+        });
+        steps.eq(1).on('impress:stepenter', function(e) {
+            $(this).find('.none').stop().delay(1000).animate({
+                opacity: 1
+            }, 2000)
+        }).on('impress:stepleave', function(e) {
+            console.log(123)
+            $(this).find('.none').stop().animate({
+                opacity: 0
+            }, 0);
+        }).end().eq(12).on('impress:stepenter', function(e) {
+            var data = JSON.parse('{"label":[1394582400025,1394584200025,1394586000025,1394587800025,1394589600025,1394591400025,1394593200025,1394595000025,1394596800025,1394598600025,1394600400025,1394602200025,1394604000025,1394605800025,1394607600025,1394609400025,1394611200025,1394613000025,1394614800025,1394616600025,1394618400025],"data":[19,24,35,27,37,21,22,18,31,21,18,27,23,23,22,34,24,27,26,16,5]}')
+            var arr = [];
+            for (var i = 0; i < data.label.length; i++) {
+                var stamp = new Date(data.label[i]);
+                var h = stamp.getHours(),
+                    m = stamp.getMinutes() == 0 ? '00' : stamp.getMinutes();
+                arr.push(h + ':' + m + '~' + h + ':' + (parseInt(m) + 29));
+            }
+            var lineChartData = {
+                labels: arr,
+                datasets: [{
+                    fillColor: "rgba(220,220,220,0)",
+                    strokeColor: "rgba(100,100,120,1)",
+                    pointColor: "rgba(100,100,120,1)",
+                    pointStrokeColor: "#fff",
+                    data: data.data
+                }]
+            }
+            var options = {
+                scaleOverride: true,
+                scaleSteps: 8,
+                scaleStepWidth: 5,
+                scaleStartValue: 0,
+                datasetStrokeWidth: 5,
+                pointDotRadius: 7
+            }
+            var myLine = new Chart($(this).find('canvas')[0].getContext("2d")).Line(lineChartData, options);
+        }).end().eq(13).on('impress:stepenter', function(e) {
+            var doughnutData = [{
+                value: 8,
+                label: '服装',
+                color: "#0DA068"
+            }, {
+                value: 15,
+                label: '配件',
+                color: "#194E9C"
+            }, {
+                value: 11,
+                label: '包',
+                color: "#ED9C13"
+            }, {
+                value: 7,
+                label: '鞋',
+                color: "#ED5713"
+            }, {
+                value: 8,
+                label: '帐篷',
+                color: "#057249"
+            }, {
+                value: 4,
+                label: '互联网',
+                color: '#5F91DC'
+            }];
+            var options = {
+                tooltips: {
+                    fontSize: '20px',
+                    padding: {
+                        top: 30,
+                        right: 20,
+                        bottom: 30,
+                        left: 20
+                    },
+                    offset: {
+                        left: 20,
+                        top: 0
+                    }
+                }
+            }
+            var myDoughnut = new Chart($(this).find('canvas')[0].getContext("2d"), options).Doughnut(doughnutData, {
+                animationEasing: "easeInOutQuad"
+            });
+        });
+    }
 });
-
-
 
 function pieChart(table, chart) {
     var chartSizePercent = 60; // The chart radius relative to the canvas width/height (in percent)
@@ -165,7 +243,7 @@ function pieChart(table, chart) {
         var currentRow = -1;
         var currentCell = 0;
 
-        $(table).each(function (i, v) {
+        $(table).each(function(i, v) {
             currentCell++;
             if (currentCell % 2 != 0) {
                 currentRow++;
@@ -295,7 +373,7 @@ function pieChart(table, chart) {
         currentPullOutSlice = slice;
         currentPullOutDistance = 0;
         clearInterval(animationId);
-        animationId = setInterval(function () {
+        animationId = setInterval(function() {
             animatePullOut(slice);
         }, pullOutFrameInterval);
 

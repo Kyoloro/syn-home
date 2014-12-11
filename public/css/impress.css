@@ -4,8 +4,8 @@ body {
     background: url('/img/background.jpg') no-repeat 50% 50%;
     -webkit-font-smoothing: antialiased;
     pointer-events: none;
-    -ms-background-size:cover;
-    background-size:cover;
+    -ms-background-size: cover;
+    background-size: cover;
 }
 #impress {
     pointer-events: auto;
@@ -120,7 +120,6 @@ body {
     color: #eaf59f;
     text-align: center;
     font-size: 120px;
-    margin-top: -100px;
 }
 .main h3 {
     font-size: 40px;
@@ -154,6 +153,7 @@ canvas {
     top: 50%;
     font-size: 60px;
     color: white;
+    -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     transition: opacity ease-in-out .4s;
 }
@@ -176,11 +176,22 @@ canvas {
 p {
     color: white;
 }
+.step p{
+    width: 900px;
+}
 @media (min-width: 1400px) {
     .extra.left {
         left: 170px;
     }
     .extra.right {
         right: 190px;
+    }
+}
+@media (max-width: 768px){
+    .mobile.none{
+        opacity: 1;
+    }
+    .tips{
+        display: none;
     }
 }

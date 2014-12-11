@@ -125,11 +125,6 @@ body {
 #compose .row .row {
     min-height: 90px;
 }
-@media (max-width: 767px) {
-    #compose .row {
-        text-align: center;
-    }
-}
 #service a {
     display: inline-block;
     width: 140px;
@@ -188,6 +183,16 @@ h4 {
     margin-top: 15px;
 }
 @media (max-width: 767px) {
+    #intro{
+        margin: -15px -20px 0;
+    }
+    #intro h1{
+        font-size: 28px;
+    }
+    #compose,#footer{
+        margin: 0 -20px;
+        padding: 0 20px;
+    }
     #compose .row {
         text-align: center;
     }
