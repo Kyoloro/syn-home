@@ -8,7 +8,7 @@ module.exports = function (app) {
     app.get('/warn', function (req, res) {
         res.render('warn');
     });
-    app.all('*', function (req, res) {
-        res.redirect('/');
+    app.get('*', function (req, res) {
+        res.redirect('/')
     });
-}
+};
